@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/img/favicon.png" rel="shortcut icon" type="image/png">
     <title>NINJA ORIGIN | GAME NHẬP VAI NHẪN GIẢ KINH ĐIỂN</title>
     <link rel="stylesheet" href="/css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -17,6 +18,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
         integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -29,11 +32,12 @@
         <div class="nav">
             <ul class="nav-list">
                 <li class="separate-page"><a href="https://www.facebook.com/profile.php?id=100088552848787"
-                        target="blank">FANPAGE</a> </li>|
-                <li class="separate"><a href="https://www.messenger.com/t/101705869469339" target="blank">CỘNG ĐỒNG</a>
+                        target="blank"><img class="img_fanPage" src="/img/btn-fanpage.png" alt=""></a> </li>|
+                <li class="separate"><a href="https://www.messenger.com/t/101705869469339" target="blank"><img
+                            src="/img/btn-congdong.png" alt=""></a>
                 </li>|
-                <li><a href="https://vngates.com/pay?gameId=e4f72f2f9b36419e59f52202f8dbd3cd" target="blank">HƯỚNG
-                        DẪN</a>
+                <li><a href="https://vngates.com/pay?gameId=e4f72f2f9b36419e59f52202f8dbd3cd" target="blank"><img class="img_fanHD"
+                            src="/img/btn-huongdan.png" alt=""></a>
                 </li>
             </ul>
         </div>
@@ -41,11 +45,17 @@
 
 
         <!-- play -->
-        <div class="play" >
-
-            <a href=""><img src="/img/btn-playtrailer.png" alt=""></a>
+        <div class="play" data-toggle="modal" data-target="#myModal">
+            <img src="/img/btn-playtrailer.png" alt="">
         </div>
         <!-- end play -->
+
+        <!-- bg -->
+        <div class="bg_download">
+            <img src="/img/bg-download.png" alt="">
+        </div>
+
+        <!-- end bg -->
 
 
         <!-- download -->
@@ -65,7 +75,7 @@
 
         <!-- char -->
         <div class="char">
-            <img src="/img/he-nguyen-to-bg.png" alt="">
+            <img src="/img/khung.png" alt="">
             <div class="set img_char "><img src="/img/set-on.png" alt=""></div>
             <div class="bang img_char "><img src="/img/bang-on.png" alt=""></div>
             <div class="gio img_char active"><img src="/img/gio-on.png" alt=""></div>
@@ -92,14 +102,15 @@
     <!-- end PC -->
 
     <!-- popup -->
-    <div class="popup">
-
-        <div class="video">
-            <iframe width="100%" height="550" src="https://www.youtube.com/embed/1YFraGakAy8"
-                title="Thiên Hạ Anh Hùng 3Q - Game Việt" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <iframe width="100%" height="550" src="https://www.youtube.com/embed/1YFraGakAy8"
+                    title="Thiên Hạ Anh Hùng 3Q - Game Việt" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen=""></iframe>
+            </div>
         </div>
     </div>
     <!-- end popup -->
