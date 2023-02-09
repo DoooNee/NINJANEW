@@ -62,7 +62,7 @@ $(".slider").slick({
 
 
 // bg_video
-const myTimeout = setTimeout(bg_video, 2400);
+const myTimeout = setTimeout(bg_video, 3050);
 function bg_video() {
     console.log('5s')
     $(".inner_video").hide();

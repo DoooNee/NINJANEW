@@ -790,12 +790,13 @@ iframe {
 
 .slider_mb {
     margin-top: -160px;
+    height: 200px;
 }
 
 
 .slick-track {
-    padding-top: 3vw;
-    padding-bottom: 3vw;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
 }
 
 .slick-slide {
@@ -808,7 +809,7 @@ iframe {
 }
 
 .slick-slide.slick-current {
-    transform: scale(1.45);
+    transform: scale(2.3);
     position: relative;
     z-index: 1;
 }
@@ -1023,8 +1024,8 @@ img.a-right.control-c.next.slick-next.slick-arrow {
 
 
     .slick-slide img {
-        width: 180%;
-        transform: translate(-23%);
+        width: 100%;
+        /* transform: translate(-23%); */
     }
 
 
