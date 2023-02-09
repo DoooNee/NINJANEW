@@ -1,3 +1,43 @@
+
+//------- responsive mobile
+var jsVer = 15;
+var phoneWidth = parseInt(window.screen.width);
+console.log(phoneWidth);
+var phoneScale = phoneWidth / 640;
+
+if (phoneWidth < 768) {
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)) {
+        var version = parseFloat(RegExp.$1);
+        // andriod 2.3
+        if (version > 2.3) {
+            document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+        } else {
+            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+        }
+
+    } else {
+        console.log(phoneWidth);
+        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+
+} else {
+    document.write('<meta name="viewport" content="width=768, minimum-scale =1, maximum-scale = 1, target-densitydpi=device-dpi">');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // active char
 var chars = document.querySelectorAll(".img_char");
 chars.forEach((char) => {
@@ -34,30 +74,41 @@ function bg_video() {
 
 // go to top 
 
-$(window).scroll(function () {
-    var duration = 1500;
-    if ($(this).scrollTop() >= 500) {
-        $(".topTop").click(function (event) {
+// $(window).scroll(function () {
+//     var duration = 1500;
+//     if ($(this).scrollTop() >= 500) {
+//         $(".topTop").click(function (event) {
 
-            // window.scrollTo({ top: 0, behavior: 'smooth'});
-            // window.scrollTo({ top: 0 }, 8000);
+//             // window.scrollTo({ top: 0, behavior: 'smooth'});
+//             // window.scrollTo({ top: 0 }, 8000);
 
-            $('html, body').animate({ scrollTop: 0 }, duration);
-            $(".ninja_move").fadeIn("slow");
-            $(".topTop").fadeOut("");
+//             $('html, body').animate({ scrollTop: 0 }, duration);
+//             $(".ninja_move").fadeIn("slow");
+//             $(".topTop").fadeOut("");
 
-        })
+//         })
 
-        $(".topTop").show();
-        $(".ninja_move").fadeOut("slow");
+//         $(".topTop").show();
+//         $(".ninja_move").fadeOut("slow");
 
 
-    }
-    else {
-        $(".topTop").hide();
+//     }
+//     else {
+//         $(".topTop").hide();
 
-    }
-})
+//     }
+// })
+
+
+
+// ---------nhận diện thiết bị
+var userAgent = navigator.userAgent.toLowerCase();
+if (userAgent.search("iphone") > -1) {
+    document.querySelector(".download_mb_android").style.display = 'none';
+
+} else if (userAgent.search("android") > -1) {
+    document.querySelector(".download_mb_ios").style.display = 'none';
+}
 
 
 
