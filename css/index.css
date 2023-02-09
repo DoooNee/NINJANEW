@@ -22,12 +22,17 @@ a {
 /* wrapper */
 
 .wrapper {
+
     position: relative;
+
     height: 143vw;
     background-image: url("/img/bg_pc.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
+
+
+.video {}
 
 
 /* video header */
@@ -84,7 +89,7 @@ img.img_fanPage {
 }
 
 img.img_fanHD {
-    margin-bottom:3px;
+    margin-bottom: 3px;
     width: 6.5vw;
 
 }
@@ -129,15 +134,17 @@ img.img_fanHD {
     width: 7vw;
     height: 6vw;
 }
+
 /* end play */
 
 /* bg download */
 
-.bg_download{
+.bg_download {
     position: absolute;
     top: 40vw;
 }
-.bg_download img{
+
+.bg_download img {
     width: 100%;
 }
 
@@ -287,7 +294,7 @@ img.img_fanHD {
 /* slider */
 .slider {
     position: absolute;
-    top: 54vw;
+    top: 100vw;
     width: 70vw;
     margin: 0 auto;
     cursor: pointer;
@@ -295,8 +302,8 @@ img.img_fanHD {
 
 
 .slick-track {
-    padding-top: 53px;
-    padding-bottom: 53px;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
 }
 
 .slick-slide {
@@ -317,7 +324,8 @@ img.img_fanHD {
 
 
 .slick-slide img {
-    width: 30vw;
+    width: 150%;
+    transform: translate(-15%);
 }
 
 img.a-left.control-c.prev.slick-prev.slick-arrow {
@@ -330,6 +338,22 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     right: -73px;
     width: 4vw;
     height: 3vw;
+}
+
+
+
+.slick-dots li {
+    display: inline-block;
+    padding: 1px;
+    background-image: url(/img/pagenav.png);
+    background-size: 100%;
+    margin: 10px 5px;
+    width: 40px;
+    height: 5px;
+}
+
+.slick-dots li.slick-active {
+    background-image: url(/img/pagenav-on.png);
 }
 
 
@@ -352,6 +376,75 @@ img.a-right.control-c.next.slick-next.slick-arrow {
 /* end popup  */
 
 
+
+
+
+
+/* go to top */
+.topTop {
+    position: fixed;
+    bottom: 5%;
+    right: 0;
+    display: none;
+}
+
+.topTop img {
+    width: 80%;
+}
+
+
+
+.ninja {
+    position: fixed;
+    bottom: 20.8%;
+    right: 2%;
+}
+
+
+
+
+.ninja_move {
+    display: none;
+    position: fixed;
+    bottom: 18%;
+    right: 0%;
+    animation: mymove 1.5s normal ease-in-out;
+    transition: all 1s linear;
+
+}
+
+
+@keyframes mymove {
+
+    0% {
+        opacity: 0;
+        transform: translatex(0) translatey(0)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translatex(-89vw) translatey(-20vh);
+    }
+
+    51% {
+        opacity: 1;
+        transform: translatex(-89vw) translatey(-20vh) scaleX(-1);
+    }
+
+    100% {
+        transform: translatex(40vw) translatey(-90vh) scaleX(-1);
+
+    }
+
+    /* 100% {
+        transform: translatex(-89vw) translatey(-80vh);
+        opacity: 0;
+    } */
+
+
+}
+
+/* end go to top */
 
 
 
