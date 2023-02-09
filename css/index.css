@@ -294,7 +294,7 @@ img.img_fanHD {
 /* slider */
 .slider {
     position: absolute;
-    top: 52vw;
+    top: 55vw;
     width: 70vw;
     margin: 0 auto;
     cursor: pointer;
@@ -316,7 +316,7 @@ img.img_fanHD {
 }
 
 .slick-slide.slick-current {
-    transform:translateX(-5vw) scale(1.45);
+    transform:scale(1.45);
     position: relative;
     z-index: 1;
 }
@@ -324,8 +324,8 @@ img.img_fanHD {
 
 
 .slick-slide img {
-    width: 150%;
-    transform: translate(-15%);
+    width: 100%;
+    /* transform: translate(-15%); */
 }
 
 img.a-left.control-c.prev.slick-prev.slick-arrow {
