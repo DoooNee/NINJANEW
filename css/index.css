@@ -329,13 +329,13 @@ img.img_fanHD {
 }
 
 img.a-left.control-c.prev.slick-prev.slick-arrow {
-    left: -73px;
+    left: -7vw;
     width: 4vw;
     height: 3vw;
 }
 
 img.a-right.control-c.next.slick-next.slick-arrow {
-    right: -73px;
+    right: -7vw;
     width: 4vw;
     height: 3vw;
 }
