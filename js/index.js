@@ -1,4 +1,3 @@
-
 // active char
 var chars = document.querySelectorAll(".img_char");
 chars.forEach((char) => {
@@ -7,9 +6,6 @@ chars.forEach((char) => {
         $(char).addClass('active');
     })
 })
-
-
-
 
 // slick slider
 $(".slider").slick({
@@ -62,7 +58,6 @@ $(window).scroll(function () {
 
     }
 })
-
 
 
 
