@@ -1168,6 +1168,7 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     .btn-copy{
         font-size: 3.2rem;
         margin-left:5px;
+        border: 1px solid #000;
     }
     
     .code{
