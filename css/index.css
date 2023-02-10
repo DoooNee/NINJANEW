@@ -538,10 +538,6 @@ img.modal-content_pc {
     filter: brightness(70%);
 }
 
-
-
-
-
 /* end popup  */
 
 
@@ -923,6 +919,13 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     background-image: url(/img/pagenav-on.png);
 }
 
+
+.slider.slick-initialized.slick-slider.slick-dotted {
+    position: absolute;
+    top: 105vw;
+    transform: translate(-50%);
+    left: 50%;
+}
 /* end slider */
 
 /* .wrapper_mb */
