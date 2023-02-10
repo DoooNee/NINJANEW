@@ -62,6 +62,7 @@ a {
     transform: translateX(-50%);
     background-color: #5c3e24de;
     width: 100%;
+    display: none;
 }
 
 .nav-list {
@@ -122,6 +123,7 @@ img.img_fanHD {
     left: 39%;
     transform: translate(-50%);
     animation: animate alternate .8s linear infinite;
+    display: none;
 }
 
 .play:hover {
@@ -152,6 +154,7 @@ img.img_fanHD {
     top: 40vw;
     left: 50%;
     transform: translate(-50%);
+    display: none;
 }
 
 
@@ -505,7 +508,7 @@ img.modal-content_pc {
     cursor: pointer;
 }
 
-.close_tt:hover{
+.close_tt:hover {
     filter: brightness(70%);
 }
 
@@ -1103,13 +1106,13 @@ img.a-right.control-c.next.slick-next.slick-arrow {
 
     /* chi tiết char */
 
-    
 
-.close_tt {
-    top: 15px;
-    right: 25px;
-    width: 35px;
-}
+
+    .close_tt {
+        top: 15px;
+        right: 25px;
+        width: 35px;
+    }
 
 
 }
