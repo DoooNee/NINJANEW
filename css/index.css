@@ -1173,6 +1173,16 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     .code{
         color:rgb(193, 58, 40);
         font-weight:bold;
-        font-size:1.5rem;
+        font-size:3.5rem;
     }
+
+
+    /* slider */
+    
+.slider.slick-initialized.slick-slider.slick-dotted {
+    position: absolute;
+    top: 1600px;
+    transform: translate(-50%);
+    left: 50%;
+}
 }
