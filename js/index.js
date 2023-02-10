@@ -28,16 +28,6 @@ if (phoneWidth < 768) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // active char
 var chars = document.querySelectorAll(".img_char");
 chars.forEach((char) => {
@@ -62,17 +52,17 @@ $(".slider").slick({
 
 
 // bg_video
-const myTimeout = setTimeout(bg_video, 3050);
+const myTimeout = setTimeout(bg_video, 6000);
 function bg_video() {
     console.log('5s')
-    $(".inner_video").hide();
-    document.querySelector(".video").innerHTML = "<video class='inner_video' width='100%' autoplay muted loop><source src='/img/head2.mp4' type='video/mp4'> </video>";
+    $(".inner_video1").css("display","none");
+    // document.querySelector(".video").innerHTML = "<video class='inner_video' width='100%' autoplay muted loop><source src='/img/head2.mp4' type='video/mp4'> </video>";
     // $(".nav").css("display", "block");
     // $(".nav").fadeIn("5000");
 }
 
 
-const nav = setTimeout(bg_nav, 4000);
+const nav = setTimeout(bg_nav, 3000);
 function bg_nav() {
     $(".nav").fadeIn("slow");
     $(".play").fadeIn("slow");
@@ -95,30 +85,30 @@ function bg_nav() {
 
 // go to top 
 
-$(window).scroll(function () {
-    var duration = 1500;
-    if ($(this).scrollTop() >= 500) {
-        $(".topTop").click(function (event) {
+function scrollToTtop (){
+    console.log('1');
+    $("html, body").animate({scrollTop: 0}, "1000");
+    $(".charTop").attr("style", "opacity: 0");
+    $(".charMoveTop").attr("style", "opacity: 1; animation: scrollToTop 1s;");
+    $(".wrapper").css({
+        'filter': 'blur(2px)',
+        '-webkit-filter': 'blur(2px)',
+        '-moz-filter': 'blur(2px)',
+        '-o-filter': 'blur(2px)',
+        '-ms-filter': 'blur(2px)'
+    });
+    setTimeout(function(){ $(".charTop").attr("style", "opacity: 1");
+                            $(".charMoveTop").attr("style", "opacity: 0");
+                            $(".wrapper").css({
+                                'filter': 'blur(0px)',
+                                '-webkit-filter': 'blur(0px)',
+                                '-moz-filter': 'blur(0px)',
+                                '-o-filter': 'blur(0px)',
+                                '-ms-filter': 'blur(0px)'
+                            }); }, 1000);
+  }
 
-            // window.scrollTo({ top: 0, behavior: 'smooth'});
-            // window.scrollTo({ top: 0 }, 8000);
 
-            $('html, body').animate({ scrollTop: 0 }, duration);
-            $(".ninja_move").fadeIn("slow");
-            $(".topTop").fadeOut("");
-
-        })
-
-        $(".topTop").show();
-        $(".ninja_move").fadeOut("slow");
-
-
-    }
-    else {
-        $(".topTop").hide();
-
-    }
-})
 
 
 

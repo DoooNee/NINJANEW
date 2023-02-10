@@ -5,6 +5,9 @@
     padding: 0;
     border: 0;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -31,7 +34,23 @@ a {
 }
 
 
-.video {}
+.video {
+    position: relative;
+    height: 100vh;
+}
+.inner_video1 {
+    z-index: 1;
+}
+/* 
+.inner_video {
+    z-index: -2;
+} */
+
+.inner_video1, .inner_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 
 /* video header */
@@ -123,6 +142,7 @@ img.img_fanHD {
     left: 39%;
     transform: translate(-50%);
     animation: animate alternate .8s linear infinite;
+    z-index: 3;
     display: none;
 }
 
@@ -135,6 +155,8 @@ img.img_fanHD {
     height: 6vw;
 }
 
+
+
 /* end play */
 
 /* bg download */
@@ -142,6 +164,7 @@ img.img_fanHD {
 .bg_download {
     position: absolute;
     top: 40vw;
+    z-index: 2;
 }
 
 .bg_download img {
@@ -154,6 +177,7 @@ img.img_fanHD {
     top: 40vw;
     left: 50%;
     transform: translate(-50%);
+    z-index: 3;
     display: none;
 }
 
@@ -486,9 +510,10 @@ iframe {
 }
 
 .modal-content {
-    width: 72vw;
+    width: 71vw;
     left: 50%;
     transform: translate(-50%);
+    background-color: black!important;
 }
 
 
@@ -524,36 +549,46 @@ img.modal-content_pc {
 
 
 /* go to top */
-.topTop {
+
+
+.scroll-to-top {
+    display: block;
     position: fixed;
-    bottom: 5%;
-    right: 0;
-}
+    right: 50px;
+    bottom: 50px;
+    z-index: 4;
+   }
 
-.topTop img {
-    width: 80%;
-}
+   .charTop {
+    transform: translate(330%, -110%);
 
-
-
-.ninja {
-    position: fixed;
-    bottom: 20.8%;
-    right: 2%;
-}
+   }
+   .charMoveTop {
+    transform: translate(6vw, -10vw);
+    opacity: 0;
+    }
 
 
+    @keyframes scrollToTop {
+      0% {
+        transform: translate(6vw, -10vw);
 
+      }
+   
+      50% {
+          transform: translate(-77vw, -15vw);
+      }
+   
+      51% {
+        transform: translate(-77vw, -15vw) scaleX(-1);
+      }
 
-.ninja_move {
-    display: none;
-    position: fixed;
-    bottom: 18%;
-    right: 0%;
-    animation: mymove 1.5s normal ease-in-out;
-    transition: all 1s linear;
+      100% {
+        transform: translate(6vw, -36vw) scaleX(-1);
 
-}
+      }
+   }
+
 
 
 
@@ -1071,7 +1106,7 @@ img.a-right.control-c.next.slick-next.slick-arrow {
         margin: 0;
         margin-top: 60vw;
         height: 302px;
-        width: 600px;
+        width: 540px;
     }
 
     .modal-content img {
