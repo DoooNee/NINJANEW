@@ -60,7 +60,7 @@ a {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #5c3e2472;
+    background-color: #5c3e24de;
     width: 100%;
 }
 
@@ -146,8 +146,20 @@ img.img_fanHD {
     width: 100%;
 }
 
-/* end bg download */
 
+.bg_download_inner {
+    position: absolute;
+    top: 40vw;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+.bg_download_inner img {
+    width: 45vw;
+}
+
+/* end bg download */
 
 
 
@@ -156,20 +168,21 @@ img.img_fanHD {
 /* downlaod */
 .download_nt {
     position: absolute;
-    top: 41.6vw;
-    left: 54%;
+    top: 1vw;
+    left: 58.5%;
     transform: translate(-50%);
     display: flex;
 }
 
 
 .download {
-    width: 22vw;
+    width: 23vw;
+    margin-left: 1vw;
 }
 
 .download img {
     width: 10vw;
-    margin: 0.2vw;
+    margin: 0.4vw;
 }
 
 .nap_the {
@@ -179,7 +192,7 @@ img.img_fanHD {
 
 
 .nap_the img {
-    width: 8vw;
+    width: 8.2vw;
 }
 
 
@@ -389,6 +402,7 @@ img.img_fanHD {
     width: 70vw;
     margin: 0 auto;
     cursor: pointer;
+    margin-top: -5vw;
 }
 
 
@@ -456,18 +470,11 @@ img.a-right.control-c.next.slick-next.slick-arrow {
 
 /* popup  */
 
-.modal-content {
-    width: 70vw;
-    margin: 0 auto;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 7vw;
+.modal-content {}
+
+.modal-char {
+    margin-top: 5vw;
 }
-
-/* .modal-char{
-    width: 59vw;
-
-} */
 
 
 
@@ -475,7 +482,36 @@ iframe {
     height: 40vw;
 }
 
-.modal-content {}
+.modal-content {
+    width: 72vw;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+img.modal-content_pc {
+
+    width: 100%;
+}
+
+
+
+
+.close_tt {
+    position: absolute;
+    top: 1.5vw;
+    right: 1.5vw;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.close_tt:hover{
+    filter: brightness(70%);
+}
+
+
+
+
 
 /* end popup  */
 
@@ -1036,7 +1072,7 @@ img.a-right.control-c.next.slick-next.slick-arrow {
         width: 600px;
     }
 
-    .modal-content img{
+    .modal-content img {
         width: 100%;
     }
 
@@ -1062,6 +1098,18 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     .wrapper {
         display: none;
     }
+
+
+
+    /* chi tiết char */
+
+    
+
+.close_tt {
+    top: 15px;
+    right: 25px;
+    width: 35px;
+}
 
 
 }
