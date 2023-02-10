@@ -95,30 +95,30 @@ function bg_nav() {
 
 // go to top 
 
-// $(window).scroll(function () {
-//     var duration = 1500;
-//     if ($(this).scrollTop() >= 500) {
-//         $(".topTop").click(function (event) {
+$(window).scroll(function () {
+    var duration = 1500;
+    if ($(this).scrollTop() >= 500) {
+        $(".topTop").click(function (event) {
 
-//             // window.scrollTo({ top: 0, behavior: 'smooth'});
-//             // window.scrollTo({ top: 0 }, 8000);
+            // window.scrollTo({ top: 0, behavior: 'smooth'});
+            // window.scrollTo({ top: 0 }, 8000);
 
-//             $('html, body').animate({ scrollTop: 0 }, duration);
-//             $(".ninja_move").fadeIn("slow");
-//             $(".topTop").fadeOut("");
+            $('html, body').animate({ scrollTop: 0 }, duration);
+            $(".ninja_move").fadeIn("slow");
+            $(".topTop").fadeOut("");
 
-//         })
+        })
 
-//         $(".topTop").show();
-//         $(".ninja_move").fadeOut("slow");
+        $(".topTop").show();
+        $(".ninja_move").fadeOut("slow");
 
 
-//     }
-//     else {
-//         $(".topTop").hide();
+    }
+    else {
+        $(".topTop").hide();
 
-//     }
-// })
+    }
+})
 
 
 
