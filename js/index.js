@@ -62,17 +62,17 @@ $(".slider").slick({
 
 
 // bg_video
-const myTimeout = setTimeout(bg_video, 3050);
+const myTimeout = setTimeout(bg_video, 6000);
 function bg_video() {
     console.log('5s')
-    $(".inner_video").hide();
-    document.querySelector(".video").innerHTML = "<video class='inner_video' width='100%' autoplay muted loop><source src='/img/head2.mp4' type='video/mp4'> </video>";
+    $(".inner_video1").css("display","none");
+    // document.querySelector(".video").innerHTML = "<video class='inner_video' width='100%' autoplay muted loop><source src='/img/head2.mp4' type='video/mp4'> </video>";
     // $(".nav").css("display", "block");
     // $(".nav").fadeIn("5000");
 }
 
 
-const nav = setTimeout(bg_nav, 4000);
+const nav = setTimeout(bg_nav, 3000);
 function bg_nav() {
     $(".nav").fadeIn("slow");
     $(".play").fadeIn("slow");
