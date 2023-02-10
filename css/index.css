@@ -1149,5 +1149,27 @@ img.a-right.control-c.next.slick-next.slick-arrow {
         width: 35px;
     }
 
+    .scroll-to-top{
+        display: none;
+    }
 
+    h2#swal2-title {
+        font-size: 33px;
+    }
+
+    .swal2-popup.swal2-modal.swal2-show {
+        width: 80%;
+        height: 200px;
+    }
+
+    .btn-copy{
+        font-size: 3.2rem;
+        margin-left:5px;
+    }
+    
+    .code{
+        color:rgb(193, 58, 40);
+        font-weight:bold;
+        font-size:1.5rem;
+    }
 }

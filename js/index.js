@@ -55,7 +55,7 @@ $(".slider").slick({
 const myTimeout = setTimeout(bg_video, 6000);
 function bg_video() {
     console.log('5s')
-    $(".inner_video1").css("display","none");
+    $(".inner_video1").css("display", "none");
     // document.querySelector(".video").innerHTML = "<video class='inner_video' width='100%' autoplay muted loop><source src='/img/head2.mp4' type='video/mp4'> </video>";
     // $(".nav").css("display", "block");
     // $(".nav").fadeIn("5000");
@@ -70,7 +70,7 @@ function bg_nav() {
 
     // $(".bg_download_inner").slideUp();
 
-    
+
 }
 
 
@@ -85,9 +85,9 @@ function bg_nav() {
 
 // go to top 
 
-function scrollToTtop (){
+function scrollToTtop() {
     console.log('1');
-    $("html, body").animate({scrollTop: 0}, "1000");
+    $("html, body").animate({ scrollTop: 0 }, "1000");
     $(".charTop").attr("style", "opacity: 0");
     $(".charMoveTop").attr("style", "opacity: 1; animation: scrollToTop 1s;");
     $(".wrapper").css({
@@ -97,16 +97,18 @@ function scrollToTtop (){
         '-o-filter': 'blur(2px)',
         '-ms-filter': 'blur(2px)'
     });
-    setTimeout(function(){ $(".charTop").attr("style", "opacity: 1");
-                            $(".charMoveTop").attr("style", "opacity: 0");
-                            $(".wrapper").css({
-                                'filter': 'blur(0px)',
-                                '-webkit-filter': 'blur(0px)',
-                                '-moz-filter': 'blur(0px)',
-                                '-o-filter': 'blur(0px)',
-                                '-ms-filter': 'blur(0px)'
-                            }); }, 1000);
-  }
+    setTimeout(function () {
+        $(".charTop").attr("style", "opacity: 1");
+        $(".charMoveTop").attr("style", "opacity: 0");
+        $(".wrapper").css({
+            'filter': 'blur(0px)',
+            '-webkit-filter': 'blur(0px)',
+            '-moz-filter': 'blur(0px)',
+            '-o-filter': 'blur(0px)',
+            '-ms-filter': 'blur(0px)'
+        });
+    }, 1000);
+}
 
 
 
@@ -127,3 +129,39 @@ if (userAgent.search("iphone") > -1) {
 
 
 
+
+// code ios
+
+var userAgent = navigator.userAgent.toLowerCase();
+var codeTriAn = 'CODEGAMEgg';
+
+
+function handleDownload() {
+    if (userAgent.search("iphone") > -1) {
+        var codeLocal = window.localStorage.getItem('code');
+
+        if (!codeLocal) {
+            window.localStorage.setItem('code', codeTriAn);
+            codeLocal = codeTriAn;
+        }
+        Swal.fire({
+            title: "<i>CODE TRI ÂN USER IOS</i>",
+            html: `<p class="code"> ${codeLocal}  <button class="btn-copy" onclick="copy()">COPY</button></p> `,
+            confirmButtonText: "Tải game",
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "https://google.com";
+            }
+        })
+
+    } else {
+        window.location = "https://google.com";
+    }
+}
+
+
+// code copy
+function copy() {
+    navigator.clipboard.writeText(window.localStorage.getItem('code'));
+}
