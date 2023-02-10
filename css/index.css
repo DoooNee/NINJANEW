@@ -5,6 +5,9 @@
     padding: 0;
     border: 0;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -546,36 +549,46 @@ img.modal-content_pc {
 
 
 /* go to top */
-.topTop {
+
+
+.scroll-to-top {
+    display: block;
     position: fixed;
-    bottom: 5%;
-    right: 0;
-}
+    right: 50px;
+    bottom: 50px;
+    z-index: 4;
+   }
 
-.topTop img {
-    width: 80%;
-}
+   .charTop {
+    transform: translate(330%, -110%);
 
-
-
-.ninja {
-    position: fixed;
-    bottom: 20.8%;
-    right: 2%;
-}
+   }
+   .charMoveTop {
+    transform: translate(6vw, -10vw);
+    opacity: 0;
+    }
 
 
+    @keyframes scrollToTop {
+      0% {
+        transform: translate(6vw, -10vw);
 
+      }
+   
+      50% {
+          transform: translate(-77vw, -15vw);
+      }
+   
+      51% {
+        transform: translate(-77vw, -15vw) scaleX(-1);
+      }
 
-.ninja_move {
-    display: none;
-    position: fixed;
-    bottom: 18%;
-    right: 0%;
-    animation: mymove 1.5s normal ease-in-out;
-    transition: all 1s linear;
+      100% {
+        transform: translate(6vw, -36vw) scaleX(-1);
 
-}
+      }
+   }
+
 
 
 
