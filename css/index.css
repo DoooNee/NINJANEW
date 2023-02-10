@@ -165,6 +165,7 @@ img.img_fanHD {
     position: absolute;
     top: 40vw;
     z-index: 2;
+    width: 100%;
 }
 
 .bg_download img {
