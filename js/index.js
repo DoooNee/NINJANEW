@@ -97,6 +97,8 @@ function scrollToTtop() {
         '-o-filter': 'blur(2px)',
         '-ms-filter': 'blur(2px)'
     });
+
+    
     setTimeout(function () {
         $(".charTop").attr("style", "opacity: 1");
         $(".charMoveTop").attr("style", "opacity: 0");
