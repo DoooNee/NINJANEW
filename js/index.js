@@ -116,13 +116,6 @@ if (userAgent.search("iphone") > -1) {
     document.querySelector(".download_mb_ios").style.display = 'none';
 }
 
-//get curren code cao loi ios
-
-
-// code ios
-
-// var userAgent = navigator.userAgent.toLowerCase();
-
 
 
 function handleDownload() {
@@ -186,8 +179,8 @@ function getCurrentCode(){
 
 // code copy
 function copy() {
-    // navigator.clipboard.writeText(window.localStorage.getItem('code'));
-    navigator.clipboard.writeText('dds');
+     navigator.clipboard.writeText(window.localStorage.getItem('code'));
+    //navigator.clipboard.writeText('dds');
 
 }
 
