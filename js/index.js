@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    
+$(document).ready(function () {
+
 });
 
 //------- responsive mobile
@@ -91,7 +91,7 @@ function scrollToTtop() {
         '-ms-filter': 'blur(2px)'
     });
 
-    
+
     setTimeout(function () {
         $(".charTop").attr("style", "opacity: 1");
         $(".charMoveTop").attr("style", "opacity: 0");
@@ -121,67 +121,73 @@ if (userAgent.search("iphone") > -1) {
 
 
 function handleDownload() {
-    if(!window.localStorage.getItem('code')){
+    if (!window.localStorage.getItem('codeios')) {
         getCurrentCode();
     }
 
+    var codeTriAn = "CODECODE666";
 
 
-
-    let timerId = setInterval(function(){
+    let timerId = setInterval(function () {
         if (userAgent.search("iphone") > -1) {
-            var codeLocal = window.localStorage.getItem('code');
-            
+            var codeLocal = window.localStorage.getItem('codeios');
+
             if (!codeLocal) {
-    
+
                 console.log(codeTriAn);
-                window.localStorage.setItem('code', codeTriAn);
+                window.localStorage.setItem('codeios', codeTriAn);
                 codeLocal = codeTriAn;
-                
+
             }
             Swal.fire({
                 title: "<i>CODE CÁO LỖI USER IOS</i>",
-                html: `<p class="code"> ${window.localStorage.getItem('code')}  <button class="btn-copy" onclick="copy()">COPY</button></p> `,
+                html: `<p class="code"> ${window.localStorage.getItem('codeios')}  <button class="btn-copy" onclick="copy()">COPY</button></p> `,
                 confirmButtonText: "Tải game",
-    
+
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location = "https://google.com";
+                    // swal("Link tải sẽ cập nhập sớm nhất!");
                 }
             })
-    
+
         } else {
             window.location = "https://google.com";
         }
     }, 200);
 
-        setTimeout(() => { clearInterval(timerId); }, 300);
+    setTimeout(() => { clearInterval(timerId); }, 300);
 }
 
 
-function getCurrentCode(){
+function getCurrentCode() {
     $.ajax({
-        url : '/backend/codeios.php',
+        url: '/backend/codeios.php',
         type: 'get',
         dataType: 'json',
-        beforeSend:function(){
-          
+        beforeSend: function () {
+
         },
-        success: function(res){
+        success: function (res) {
             codeTriAn = res.code;
         },
-        complete: function(){
+        complete: function () {
         }
     });
 }
 
 
 
+// link tải 
+
+function popupLink(){
+    swal("Link tải sẽ cập nhập sớm nhất!");
+}
 
 
 // code copy
 function copy() {
-     navigator.clipboard.writeText(window.localStorage.getItem('code'));
+    navigator.clipboard.writeText(window.localStorage.getItem('codeios'));
     //navigator.clipboard.writeText('dds');
 
 }
@@ -190,9 +196,9 @@ function copy1() {
     let copyText = document.getElementById("copyClipboard");
     let copySuccess = document.getElementById("copied-success");
     copyText.select();
-    copyText.setSelectionRange(0, 99999); 
+    copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
-    
-   copySuccess.style.opacity = "1";
-   setTimeout(function(){ copySuccess.style.opacity = "0" }, 500);
-  }
+
+    copySuccess.style.opacity = "1";
+    setTimeout(function () { copySuccess.style.opacity = "0" }, 500);
+}
