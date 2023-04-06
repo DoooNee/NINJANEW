@@ -79,7 +79,7 @@ a {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #5c3e24de;
+    background-color: #18599bf2;
     width: 100%;
     display: none;
 }
@@ -113,8 +113,14 @@ img.img_fanHD {
 
 }
 
+img.img_giftcode {
+    width: 8.5vw;
+    margin-bottom: -3px;
+}
 
-
+img.img_qltk {
+    width: 10.5vw;
+}
 
 .nav-list a {
     color: #fefcd5;
@@ -541,7 +547,26 @@ img.modal-content_pc {
 /* end popup  */
 
 
+/* footer pc*/
 
+.footer-pc {
+    
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    margin: 0 50px;
+    text-align: center;
+}
+
+.footer-mob {
+    display: none;
+}
 
 
 
@@ -614,8 +639,8 @@ img.modal-content_pc {
 .play-mb img {
     width: 20vw;
     height: 15vw;
-    margin-top: 418px;
-    margin-left: 222px;
+    margin-top: 580px;
+    margin-left: 260px;
     animation: animate alternate .8s linear infinite;
 
 
@@ -627,7 +652,7 @@ img.modal-content_pc {
 /* download mb */
 .download_mb img {
     margin-left: 318px;
-    margin-top: 165px;
+    margin-top: 17px;
     width: 281px;
 
 }
@@ -1026,7 +1051,7 @@ img.a-right.control-c.next.slick-next.slick-arrow {
 
 
     .wrapper_mb {
-        background-image: url(/img/mob/bg-mob.jpg);
+        background-image: url(/img/bg-m1.jpg);
         width: 100%;
         height: 1836px;
         background-repeat: no-repeat;
@@ -1097,8 +1122,14 @@ img.a-right.control-c.next.slick-next.slick-arrow {
         width: 48%;
 
     }
+  
+     img.nav_menu_giftcode {
+        width: 60%;
+    }
 
-
+    img.nav_menu_qltk {
+        width: 70%;
+    }
 
     .slick-slide img {
         width: 100%;
@@ -1109,7 +1140,7 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     .modal-content {
         margin: 0;
         margin-top: 60vw;
-        height: 302px;
+        height: 285px;
         width: 540px;
     }
 
@@ -1168,6 +1199,7 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     .btn-copy{
         font-size: 3.2rem;
         margin-left:5px;
+        border: 1px solid #000;
     }
     
     .code{
@@ -1185,4 +1217,23 @@ img.a-right.control-c.next.slick-next.slick-arrow {
     transform: translate(-50%);
     left: 50%;
 }
+  
+  .footer-pc {
+  	display:none;
+  }
+  
+  .footer-mob {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    position: relative;
+    top: 30%;
+    width: 100%;
+    padding: 20px;
+}
+  
+  
+  
+  
 }

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NINJA HUYỀN THOẠI | TRACKING DOWNLOAD</title>
+    <link href="/img/favicon.png" rel="shortcut icon" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- định dạng ngày tháng -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0 auto;
+        }
+        h2{
+            text-align: center;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+      
+      form#date-form {
+            text-align: center;
+        }
+      
+        </style>
+</head>
+<body>
+<h2 class="title">TRACKING DOWNLOAD</h2>
+
+<div style="text-align: center;margin-bottom: 20px;">
+    <a href="javascript:ios();" style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: green; text-decoration: none; color: #fff;">IOS</a>
+    <a href="javascript:android();" style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: green; text-decoration: none; color: #fff;">ANDROID</a>
+    <a href="javascript:pc();" style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: green; text-decoration: none; color: #fff;">PC</a>
+  	<a href="javascript:apk();" style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: green; text-decoration: none; color: #fff;">APK</a>
+</div>
+
+<div style="text-align: center;margin: 20px 0;" class="exportToExcel">
+    <a href=""  style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: rgb(116, 117, 116); text-decoration: none; color: #fff;" >Export to excel</a>
+</div>
+
+  <div>
+  	<h3 class="luot_click" style="text-align: center;">Tổng lượt click:</h3>
+  </div>
+  
+  <div >
+    <form id="date-form">
+        <label for="start-date">Ngày bắt đầu: (bắt đầu tính từ 0h00 của ngày)</label>
+        <input type="date" id="start-date" name="start-date">
+        <br>
+        <label for="end-date">Ngày kết thúc: (bắt đầu tính từ 0h00 của ngày)</label>
+        <input type="date" id="end-date" name="end-date">
+        <br>
+        <button type="submit" id="submit-btn" onclick="sortTableByDate ('ios')">Submit</button>
+      </form>
+    
+</div>
+
+<table class="html_table">
+  <tr>
+    <th>id</th>
+    <th>time</th>
+  </tr>
+  <tr>
+    <!-- <td>1</td>
+    <td>2023-01-11 17:07:05</td> -->
+  </tr>
+  
+</table>
+<a href=""><img src="" alt="" target="blank"></a>
+
+<script>
+    function ios(){
+        $.ajax({
+        url: '../backend/getDataIOS.php',
+        type: 'get',
+        dataType: 'json',    
+        data: {},
+        success: function(response){
+        
+            console.log(response);
+            $('.html_table').html(response.table);
+  			$('#date-form').html(`  <label for="start-date">Ngày bắt đầu: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="start-date" name="start-date">
+                                    <br>
+                                    <label for="end-date">Ngày kết thúc: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="end-date" name="end-date">
+                                    <br>
+                                    <button type="submit" id="submit-btn" onclick="sortTableByDate ('ios')">Submit</button>`);
+  			$('.luot_click').html(`Tổng lượt click: ${response.max_id}`);
+            $('.title').html('TRACKING DOWNLOAD IOS');
+            $('.html_table').attr('id', 'table_ios');
+            $('.exportToExcel').html(`<a href="javascript:exportTableToExcel('table_ios');"  style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: rgb(116, 117, 116); text-decoration: none; color: #fff;" >Export to excel</a>`);
+        },
+    });
+    }
+
+    function android(){
+        $.ajax({
+        url: '../backend/getDataANDROID.php',
+        type: 'get',
+        dataType: 'json',    
+        data: {},
+        success: function(response){
+        
+            console.log(response);
+            $('.html_table').html(response.table);
+  			$('#date-form').html(`  <label for="start-date">Ngày bắt đầu: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="start-date" name="start-date">
+                                    <br>
+                                    <label for="end-date">Ngày kết thúc: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="end-date" name="end-date">
+                                    <br>
+                                    <button type="submit" id="submit-btn" onclick="sortTableByDate ('android')">Submit</button>`);
+  			$('.luot_click').html(`Tổng lượt click: ${response.max_id}`);
+            $('.title').html('TRACKING DOWNLOAD ANDROID')
+            $('.html_table').attr('id', 'table_android');
+            $('.exportToExcel').html(`<a href="javascript:exportTableToExcel('table_android');"  style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: rgb(116, 117, 116); text-decoration: none; color: #fff;" >Export to excel</a>`);
+        },
+    });
+    }
+  
+  
+  
+  function apk(){
+        $.ajax({
+        url: '../backend/getDataAPK.php',
+        type: 'get',
+        dataType: 'json',    
+        data: {},
+        success: function(response){
+        
+            console.log(response);
+            $('.html_table').html(response.table);
+  			$('#date-form').html(`  <label for="start-date">Ngày bắt đầu: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="start-date" name="start-date">
+                                    <br>
+                                    <label for="end-date">Ngày kết thúc: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="end-date" name="end-date">
+                                    <br>
+                                    <button type="submit" id="submit-btn" onclick="sortTableByDate ('apk')">Submit</button>`);
+  			$('.luot_click').html(`Tổng lượt click: ${response.max_id}`);
+            $('.title').html('TRACKING DOWNLOAD APK')
+            $('.html_table').attr('id', 'table_apk');
+            $('.exportToExcel').html(`<a href="javascript:exportTableToExcel('table_apk');"  style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: rgb(116, 117, 116); text-decoration: none; color: #fff;" >Export to excel</a>`);
+        },
+    });
+    }
+
+    function pc(){
+        $.ajax({
+        url: '../backend/getDataPC.php',
+        type: 'get',
+        dataType: 'json',    
+        data: {},
+        success: function(response){
+        
+            // console.log(response);
+            $('.html_table').html(response.table);
+  			$('#date-form').html(`  <label for="start-date">Ngày bắt đầu: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="start-date" name="start-date">
+                                    <br>
+                                    <label for="end-date">Ngày kết thúc: (bắt đầu tính từ 0h00 của ngày)</label>
+                                    <input type="date" id="end-date" name="end-date">
+                                    <br>
+                                    <button type="submit" id="submit-btn" onclick="sortTableByDate ('pc')">Submit</button>`);
+  			$('.luot_click').html(`Tổng lượt click: ${response.max_id}`);
+            $('.title').html('TRACKING DOWNLOAD PC');
+            $('.html_table').attr('id', 'table_pc');
+            $('.exportToExcel').html(`<a href="javascript:exportTableToExcel('table_pc');"  style="border-radius: 6px; padding: 10px; margin-right: 10px; border: 1px solid; background-color: rgb(116, 117, 116); text-decoration: none; color: #fff;" >Export to excel</a>`);
+        },
+    });
+    }
+
+    function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['\ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
+
+   function sortTableByDate (device){
+
+        $('#date-form').submit((event) => {
+        event.preventDefault(event);
+        var startDate = moment(new Date($('#start-date').val())).format("YYYY/MM/DD");
+        var endDate = moment(new Date($('#end-date').val())).format("YYYY/MM/DD");
+
+        if(startDate == 'Invalid date'){
+            swal("Thông báo!", "Vui lòng nhập ngày bắt đầu!"); return 0;
+        }
+        if(endDate == 'Invalid date'){
+            swal("Thông báo!", "Vui lòng nhập ngày kết thúc!"); return 0;
+        }
+
+
+        
+         console.log("Ngày bắt đầu là: ", startDate);
+         console.log("Ngày kết thúc là: ", endDate);
+         console.log("Thiết bị: ", device);
+
+
+
+        $.ajax({
+            url: '../backend/sortTableByDate.php',
+  			dataType: 'json',
+            type: "POST",
+            data:{  startDate:startDate,
+                    endDate:endDate,
+                    device: device },
+            beforeSend: function() {},
+               
+            success: function(res){
+                    console.log(res);
+                    $('.html_table').html(res.table);
+  					$('.luot_click').html(`Tổng lượt click: ${res.clicks}`);
+            }
+        })
+
+
+        })
+    }
+  
+</script>
+</body>
+</html>
