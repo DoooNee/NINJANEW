@@ -1,6 +1,3 @@
-$(document).ready(function() {
-    
-});
 
 //------- responsive mobile
 var jsVer = 15;
@@ -90,6 +87,8 @@ function scrollToTtop() {
         '-o-filter': 'blur(2px)',
         '-ms-filter': 'blur(2px)'
     });
+
+
     setTimeout(function () {
         $(".charTop").attr("style", "opacity: 1");
         $(".charMoveTop").attr("style", "opacity: 0");
@@ -116,76 +115,41 @@ if (userAgent.search("iphone") > -1) {
     document.querySelector(".download_mb_ios").style.display = 'none';
 }
 
-//get curren code cao loi ios
+
+
+
+
+
 
 
 // code ios
 
-// var userAgent = navigator.userAgent.toLowerCase();
-
-
-function comingsoon(){
-	swal("Coming soon!");
-}
+var userAgent = navigator.userAgent.toLowerCase();
+var codeTriAn = 'CODEGAMEgg';
 
 
 function handleDownload() {
-    if(!window.localStorage.getItem('code')){
-        getCurrentCode();
-    }
+    if (userAgent.search("iphone") > -1) {
+        var codeLocal = window.localStorage.getItem('code');
 
+        if (!codeLocal) {
+            window.localStorage.setItem('code', codeTriAn);
+            codeLocal = codeTriAn;
+        }
+        Swal.fire({
+            title: "<i>CODE TRI ÂN USER IOS</i>",
+            html: `<p class="code"> ${codeLocal}  <button class="btn-copy" onclick="copy()">COPY</button></p> `,
+            confirmButtonText: "Tải game",
 
-
-
-    let timerId = setInterval(function(){
-        if (userAgent.search("iphone") > -1) {
-            var codeLocal = window.localStorage.getItem('code');
-            
-            if (!codeLocal) {
-    
-                //console.log(codeTriAn);
-                window.localStorage.setItem('code', codeTriAn);
-                codeLocal = codeTriAn;
-                
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "https://google.com";
             }
-            Swal.fire({
-                title: "<i>Quà đặc biệt cho IOS</i>",
-                html: `<p class="code"> ${window.localStorage.getItem('code')}  <button class="btn-copy" onclick="copy()">COPY</button></p> `,
-                confirmButtonText: "Tải game",
-    
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location = "https://apps.apple.com/app/id1619232058";
-                  
-                }
-            })
-    
-        } else {
-            window.location = "https://google.com";
-        }
-    }, 200);
+        })
 
-        setTimeout(() => { clearInterval(timerId); }, 300);
-}
-
-
-
-
-
-function getCurrentCode(){
-    $.ajax({
-        url : '/backend/codeios.php',
-        type: 'get',
-        dataType: 'json',
-        beforeSend:function(){
-          
-        },
-        success: function(res){
-            codeTriAn = res.code;
-        },
-        complete: function(){
-        }
-    });
+    } else {
+        window.location = "https://google.com";
+    }
 }
 
 
@@ -194,49 +158,5 @@ function getCurrentCode(){
 
 // code copy
 function copy() {
-     navigator.clipboard.writeText(window.localStorage.getItem('code'));
-   	
-  	swal("Thông báo!", "Copy code thành công", "success");
-
-}
-
-// tracking download
-function tracking_download(type) {
-    $.ajax({
-        url: 'backend/tracking_download.php',
-        type: 'POST',
-        data: {type:type},
-        success: function (data) {
-            console.log(data);
- 
-            console.log(type);
-            if(type == 'pc'){
-              console.log(type);
-              window.location.href = 'https://ninja.vngates.com/download/NinjaOrigin.exe';
-            }
-            if(type == 'android'){
-              console.log(type);
-              window.location.href = 'https://play.google.com/store/apps/details?id=com.teamae.ninjaprivate';
-            }
-          if(type == 'ios'){
-              console.log(type);
-            /*
-            var userAgent = navigator.userAgent.toLowerCase();
-            if (userAgent.search("iphone") > -1) {
-                handleDownload();
-
-            }
-            else{
-            	window.location.href = 'https://apps.apple.com/app/id1619232058';
-            }
-            */
-            window.location.href = 'https://apps.apple.com/app/id1619232058';
-              
-            }
-          if(type == 'apk'){
-              console.log(type);
-              window.location.href = 'https://ninja.vngates.com/download/NinjaOriginMini.apk';
-            }
-        }
-    });
+    navigator.clipboard.writeText(window.localStorage.getItem('code'));
 }
